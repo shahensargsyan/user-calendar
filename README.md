@@ -24,6 +24,9 @@ in common/config/main-local.php file correct db credentials
 $ docker exec yii-application-mysql-1 mysql -u yii2advanced -psecret -e "drop schema yii2advanced;"
 $ docker exec yii-application-mysql-1 mysql -u yii2advanced -psecret -e "create schema yii2advanced;"
 
+#updating composer
+$ docker exec yii-application-backend-1 bash -c "composer update"
+
 # run migrations
 $ docker exec yii-application-backend-1 bash -c " yes | php yii migrate --migrationPath=@yii/rbac/migrations;"
 $ docker exec yii-application-backend-1 bash -c " yes | php yii migrate"
